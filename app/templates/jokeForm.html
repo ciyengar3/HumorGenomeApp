@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+        <form method="post" action="{{ url_for('save_form') }}">
+			<br />
+			<fieldset>
+				<legend>
+                        <div><p>"{{joke.content}}"</p></div>
+				</legend>
+				<p>
+					<label for="hear-about">
+						How funny was the joke?
+					</label>
+					<select name="rating" id="hear-about">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+					</select>
+				</p>
+				<p>
+					Overall, did you think it was funny?
+					<br />
+					<label>
+						<input type="radio" name="funny" value="yes" checked="checked">
+						Yes
+					</label>
+					<label>
+						<input type="radio" name="funny" value="no">
+						No
+					</label>
+					<label>
+						<input type="radio" name="funny" value="maybe">
+						Maybe
+					</label>
+				</p>
+				<p>
+					<label for="comments">
+						Comments:
+					</label>
+					<br />
+					<textarea rows="4" cols="40" id="comments">
+					</textarea>
+				</p>
+				<br />
+				<input type="submit" value="Submit Review" />
+			</fieldset>
+		</form>
+{% endblock %}

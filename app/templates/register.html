@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" action="{{ url_for('registered') }}">
+First name:  <input type="text" name="first_name" />
+<br>
+Last name:  <input type="text" name="last_name" />
+<br>
+    Username:  <input type="text" name="username" />
+    <br>
+    Password:  <input type="text" name="password" />
+    <input type="submit" name="addUser" value="Register">
+    <label>
+        <input type="radio" name="internal" value="internal" checked="checked">
+        Internal
+    </label>
+    <label>
+        <input type="radio" name="internal" value="external">
+        External
+    </label>
+</form>
+{% endblock %}
